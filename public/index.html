@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fdfcf6"><title>TikTok Analyzer — Metrics HQ</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="top-blur"></div>
+  <header class="brand">
+    <div class="brand-left"><div class="tiktok">♪</div><div><div class="brand-title">TIKTOK ANALYZER <span>METRICS HQ</span></div><div class="sub">Video metrics, shadowban &amp; bitrate.</div></div></div>
+    <div class="version">v1.0 <b>•</b> METRICS</div>
+    <button class="close" aria-label="Reset" id="reset">×</button>
+  </header>
+  <main>
+    <form id="analyzeForm" class="urlbar">
+      <input id="url" type="url" placeholder="https://www.tiktok.com/@username/video/..." required>
+      <button class="get" id="submitBtn">GET</button>
+    </form>
+    <section class="panel">
+      <div class="panel-head"><span class="tag">ANALYSIS RESULT</span><button class="icon-btn" id="copy" title="Salin hasil">▢</button></div>
+      <div id="empty" class="empty">Masukkan link TikTok lalu tekan GET untuk memulai analisis.</div>
+      <div id="result" hidden>
+        <div class="video-head">
+          <img id="cover" alt="Thumbnail video" src="">
+          <div class="video-info">
+            <div id="caption" class="caption">—</div>
+            <div class="meta"><span id="author">♙ —</span><span id="date">▣ —</span></div>
+            <div class="pills"><span class="pill green" id="fyp">FYP: Belum dapat diverifikasi</span><span class="pill" id="shadow">Shadowban: Tidak diketahui</span></div>
+            <div class="video-actions"><a id="openTikTok" target="_blank" rel="noopener">Buka video di TikTok ↗</a><button type="button" class="download-btn" id="downloadVideo" hidden>⇩ DOWNLOAD VIDEO</button></div>
+          </div>
+        </div>
+        <div class="metrics" id="quality">
+          <div class="metric"><small>▣ Resolution</small><strong id="resolution">—</strong></div>
+          <div class="metric"><small>◉ Frame Rate</small><strong id="fps">—</strong></div>
+          <div class="metric"><small>◒ Bitrate</small><strong id="bitrate">—</strong></div>
+          <div class="metric"><small>◷ Duration</small><strong id="duration">—</strong></div>
+          <div class="metric"><small>▤ File Size</small><strong id="filesize">—</strong></div>
+          <div class="metric"><small>▣ Dynamic Range</small><strong id="dynamic">—</strong></div>
+        </div>
+        <div class="engagement">
+          <h3>ENGAGEMENT METRICS</h3>
+          <div class="eng-grid">
+            <div>◉ <b id="views">—</b> Views</div><div>♥ <b id="likes">—</b> Likes</div>
+            <div>▰ <b id="comments">—</b> Comments</div><div>▣ <b id="favorites">—</b> Favorites</div>
+            <div>➦ <b id="shares">—</b> Shares</div><div>⇩ <b id="downloads">—</b> Downloads</div>
+          </div>
+          <div class="rate">⌁ Engagement : <strong id="rate">—</strong></div>
+        </div>
+        <div class="details">
+          <div><span>ID :</span> <b id="videoId">—</b></div><div><span>Shadow Ban :</span> <b id="shadowDetail">Tidak diketahui</b></div>
+          <div><span>Region :</span> <b id="region">—</b></div><div><span>Sound :</span> <b id="sound">—</b></div>
+        </div>
+        <p class="disclaimer" id="disclaimer"></p>
+      </div>
+    </section>
+    <section class="panel console">
+      <div class="panel-head"><span class="console-title">▣ CONSOLE OUTPUT</span><span class="server">SERVER : VERCEL</span></div>
+      <div id="logs" aria-live="polite"><p>[INIT] TikTok Analyzer Engine siap.</p><p>[INFO] Data publik dan kualitas media akan ditampilkan jika tersedia.</p></div>
+    </section>
+    <footer>METRICS HQ · Public data only · No TikTok password required</footer>
+  </main>
+  <script src="/app.js"></script>
+</body></html>
